@@ -3,8 +3,9 @@ using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.IdentityModel.Protocols;
+using NorthwindApi.Models;
 
-namespace NorthwindApi.Models
+namespace NorthwindApi.Data
 {
     public partial class NorthwindContext : DbContext
     {
@@ -47,13 +48,13 @@ namespace NorthwindApi.Models
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<Territories> Territories { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["Northwind"].ConnectionString);
-            }
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["Northwind"].ConnectionString);
+        //    }
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
