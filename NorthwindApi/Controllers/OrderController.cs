@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NorthwindApi.Data;
 using NorthwindApi.Models;
 
 namespace NorthwindApi.Controllers
